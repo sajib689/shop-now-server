@@ -1,4 +1,5 @@
-import IUser from "./users.interface"
+
+import { IUser } from "./users.interface";
 import { Users } from "./users.model"
 import bcrypt from "bcryptjs";
 
@@ -19,7 +20,14 @@ export const usersService = async (users: Partial<IUser>): Promise<IUser | null>
         throw new Error("Error")
     }
 }
-
+export const loginUsersService = async (email: string): Promise<IUser | null> => {
+    try {
+        const users = await Users.findOne({email})
+        return users
+    } catch (err) {
+        throw new Error("Error")
+    }
+}
 export const getUsersService = async (): Promise<IUser[]> => {
     try {
         const getUsers = await Users.find()
