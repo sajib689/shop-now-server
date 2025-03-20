@@ -1,5 +1,5 @@
 
-interface IProducts {
+export interface IProducts {
     id: string;
     productName: string;
     productPrice: string;
