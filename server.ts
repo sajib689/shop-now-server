@@ -15,6 +15,10 @@ app.use(
 );
 app.use(express.urlencoded({ extended: true }));
 const server = createServer(app);
+// router
+
+app.use('/api/v1')
+
 // Connect to MongoDB
 const connectionToDb = async () => {
   try {
