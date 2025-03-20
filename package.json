@@ -2,9 +2,11 @@
   "name": "shop-now-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js",
+    "dev": "ts-node-dev --respawn server.ts"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +18,10 @@
     "mongoose": "^8.12.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
     "@types/node": "^22.13.10",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.2"
   }
 }
