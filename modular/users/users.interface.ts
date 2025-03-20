@@ -1,4 +1,3 @@
-
 interface IUser {
     id: number;
     name: string;
@@ -9,4 +8,10 @@ interface IUser {
     role: string;
     photo: string;
 }
-export default IUser;
+
+interface ILogin {
+    email: string;
+    password: string;
+}
+
+export { IUser, ILogin };  
