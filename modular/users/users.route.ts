@@ -4,11 +4,11 @@ import { getUsersController, loginUsersController, usersController } from "./use
 const usersRouter = express.Router()
 
 usersRouter.post('/register', usersController)
-// http://localhost:5000/api/v1/users
-
-usersRouter.get('/users', getUsersController)
-// http://localhost:5000/api/v1/users
+// http://localhost:5000/api/v1/register
 usersRouter.post('/login', loginUsersController)
 // http://localhost:5000/api/v1/login
+usersRouter.get('/users', getUsersController)
+// http://localhost:5000/api/v1/users
+
 
 export default usersRouter;

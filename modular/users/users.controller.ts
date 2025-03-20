@@ -49,7 +49,7 @@ export const loginUsersController = async (req: Request, res: Response) => {
         }
 
         // Compare hashed password
-        const isPasswordValid = await bcrypt.compareSync(password, user.password);
+        const isPasswordValid = bcrypt.compareSync(password, user.password);
 
         if (!isPasswordValid) {
             return res.status(401).json({
