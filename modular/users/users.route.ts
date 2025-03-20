@@ -1,6 +1,8 @@
 import express from "express"
 import { usersController } from "./users.controller"
 
-const router = express.Router()
+const usersRouter = express.Router()
 
-router.post('/users', usersController)
+usersRouter.post('/users', usersController)
+
+export default usersRouter;
