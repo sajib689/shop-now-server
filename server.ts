@@ -23,7 +23,7 @@ app.use('/api/v1/', usersRouter)
 // Connect to MongoDB
 const connectionToDb = async () => {
   try {
-    const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.2m0rny5.mongodb.net/learnCode`;
+    const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.2m0rny5.mongodb.net/shopNow`;
     await mongoose.connect(uri);
     console.log("MongoDB connected");
   } catch (err) {
