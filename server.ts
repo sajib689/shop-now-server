@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { createServer } from "http";
+import usersRouter from './modular/users/users.route';
 const PORT = process.env.PORT || 5000;
 const app = express();
 dotenv.config();
@@ -17,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 const server = createServer(app);
 // router
 
-app.use('/api/v1')
+app.use('/api/v1/', usersRouter)
 
 // Connect to MongoDB
 const connectionToDb = async () => {

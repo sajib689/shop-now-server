@@ -27,6 +27,10 @@ export const usersSchema = new Schema({
     photo: {
         type: String,
     },
+    createdAt: {
+        type: Date,
+        default: Date.now(),
+    }
 
 })
 
