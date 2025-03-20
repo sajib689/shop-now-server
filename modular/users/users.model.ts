@@ -1,5 +1,7 @@
-import { Schema } from "mongoose";
+import { model, Model, Schema } from "mongoose";
+import IUser from "./users.interface";
 
+type usersModel = Model<IUser, object>
 export const usersSchema = new Schema({
     id: {
         type: String,
@@ -25,5 +27,7 @@ export const usersSchema = new Schema({
     photo: {
         type: String,
     },
-    
+
 })
+
+export const Users = model<IUser, usersModel>("Users", usersSchema);
