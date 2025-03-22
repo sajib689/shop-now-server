@@ -12,6 +12,6 @@ usersRouter.get('/users', asyncHandler(getUsersController))
 // http://localhost:5000/api/v1/users
 usersRouter.delete('/deleteuser/:email', asyncHandler(deleteUsersController))
 // http://localhost:5000/api/v1/deleteuser
-usersRouter.patch('/updateRole', asyncHandler(updateRoleController))
-// http://localhost:5000/api/v1/updateRole
+usersRouter.patch('/updaterole', asyncHandler(updateRoleController))
+// http://localhost:5000/api/v1/updaterole
 export default usersRouter;
