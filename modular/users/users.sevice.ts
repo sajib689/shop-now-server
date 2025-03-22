@@ -28,11 +28,22 @@ export const loginUsersService = async (email: string): Promise<IUser | null> =>
         throw new Error("Error")
     }
 }
+// get all users
 export const getUsersService = async (): Promise<IUser[]> => {
     try {
         const getUsers = await Users.find()
         return getUsers
     } catch (err){
+        throw new Error("Error")
+    }
+}
+// delete user
+export const deleteUsersService = async (email: string): Promise<IUser | null> => {
+    try {
+        const deleteUser = await Users.findOneAndDelete({email})
+        return deleteUser
+
+    } catch (err) {
         throw new Error("Error")
     }
 }
