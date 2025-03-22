@@ -20,6 +20,7 @@ export const usersService = async (users: Partial<IUser>): Promise<IUser | null>
         throw new Error("Error")
     }
 }
+// login user
 export const loginUsersService = async (email: string): Promise<IUser | null> => {
     try {
         const users = await Users.findOne({email})

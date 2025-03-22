@@ -94,3 +94,19 @@ export const getUsersController = async (req: Request, res: Response) => {
     throw new Error("Error");
   }
 };
+
+// delete user controller
+
+export const deleteUsersController = async (req: Request, res: Response) => {
+  try {
+    const email = req.body.email;
+    const result = await deleteProductsService(email);
+    res.status(200).json({
+      message: "Successfully deleted user",
+      status: "success",
+      data: result,
+    });
+  } catch (err) {
+    throw new Error("Error");
+  }
+};
