@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getProductsService, productsService } from "./products.service";
+import { deleteProductsService, getProductsService, productsService } from "./products.service";
 import { IProducts } from "./products.interface";
 
 // create a new product
@@ -31,3 +31,20 @@ export const getProductsController = async (req: Request, res: Response) => {
         throw new Error("Error")
     }
 }
+
+
+// delete products controller
+
+export const deleteProductsController = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id;
+      const result = await deleteProductsService(id);
+      res.status(200).json({
+        message: "Successfully deleted products",
+        status: "success",
+        data: result,
+      });
+    } catch (err) {
+      throw new Error("Error");
+    }
+  }
