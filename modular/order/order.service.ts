@@ -10,3 +10,14 @@ export const placeOrderService = async (order: Partial<IOrder>): Promise<IOrder 
         throw new Error("Error while placing order");
     }
 };
+
+// get all orders history
+
+export const orderHistoryService = async () => {
+    try {
+        const orders = await Order.find();
+        return orders;
+    } catch (error) {
+        throw new Error("Error while fetching order history");
+    }
+}
