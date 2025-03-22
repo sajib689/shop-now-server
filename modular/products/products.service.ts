@@ -31,3 +31,13 @@ export const deleteProductsService = async (id: string) => {
         throw new Error("Error")
     }
 }
+
+// update products
+export const updateProductsService = async (id: string) => {
+    try {
+        const result = await Products.findByIdAndUpdate(id)
+        return result
+    } catch (err) {
+        throw new Error("Error")
+    }
+}
