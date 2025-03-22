@@ -33,9 +33,9 @@ export const deleteProductsService = async (id: string) => {
 }
 
 // update products
-export const updateProductsService = async (id: string) => {
+export const updateProductsService = async (id: string, update: Partial<IProducts>) => {
     try {
-        const result = await Products.findByIdAndUpdate(id)
+        const result = await Products.findOneAndUpdate({_id: id},update, {new: true})
         return result
     } catch (err) {
         throw new Error("Error")

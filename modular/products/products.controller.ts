@@ -54,7 +54,8 @@ export const deleteProductsController = async (req: Request, res: Response) => {
 export const updateProductsController = async (req: Request, res: Response) => {
     try {
       const id = req.params.id;
-      const result = await updateProductsService(id);
+      const update: Partial<IProducts> = req.body;
+      const result = await updateProductsService(id,update);
       res.status(200).json({
         message: "Successfully updated products",
         status: "success",
