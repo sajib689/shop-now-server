@@ -9,4 +9,6 @@ productsRouter.get('/getproducts', getProductsController);
 // http://localhost:5000/api/v1/getproducts
 productsRouter.delete('/deleteproducts/:id', deleteProductsController);
 // http://localhost:5000/api/v1/deleteproducts/:id
+productsRouter.put('/updateproducts/:id', deleteProductsController);
+// http://localhost:5000/api/v1/updateproducts/:id
 export default productsRouter;
