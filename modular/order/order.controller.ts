@@ -11,7 +11,7 @@ export const placeOrderController = async (req: Request, res: Response) => {
             data: newOrder,
         });
     } catch (error) {
-        res.status(400).json({ message: error.message });
+       throw new Error("Error while placing order");
     }
 };
 
@@ -25,6 +25,6 @@ export const orderHistoryController = async (req: Request, res: Response) => {
             data: orders,
         });
     } catch (error) {
-        res.status(400).json({ message: error.message });
+       throw new Error("Error while fetching order history");
     }
 }

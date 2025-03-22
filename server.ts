@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { createServer } from "http";
 import usersRouter from './modular/users/users.route';
 import productsRouter from './modular/products/products.route';
+import orderRouter from './modular/order/order.route';
 const PORT = process.env.PORT || 5000;
 const app = express();
 dotenv.config();
@@ -21,6 +22,7 @@ const server = createServer(app);
 
 app.use('/api/v1/', usersRouter)
 app.use('/api/v1/', productsRouter)
+app.use('/api/v1/', orderRouter)
 // Connect to MongoDB
 const connectionToDb = async () => {
   try {
