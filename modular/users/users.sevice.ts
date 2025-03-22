@@ -48,3 +48,15 @@ export const deleteUsersService = async (email: string): Promise<IUser | null> =
         throw new Error("Error")
     }
 }
+
+// update the role of a user
+
+export const updateRoleService = async (email: string, role: string): Promise<IUser | null> => {
+    try {
+        const updateUser = await Users
+        .findOneAndUpdate({email}, {role}, {new: true})
+        return updateUser
+    } catch (err) {
+        throw new Error("Error")
+    }
+}
