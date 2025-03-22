@@ -7,5 +7,5 @@ const orderRouter = express.Router();
 // create order router
 orderRouter.post('/order', asyncHandler(placeOrderController))
 orderRouter.get('/orderhistory', asyncHandler(orderHistoryController))
-orderRouter.get('/order/:email', asyncHandler(getOrderByEmailController))
+orderRouter.get('/orderhistory/:email', asyncHandler(getOrderByEmailController))
 export default orderRouter;
