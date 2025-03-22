@@ -20,3 +20,14 @@ export const getProductsService = async () => {
         throw new Error("Error")
     }
 }
+
+// delete products
+
+export const deleteProductsService = async (id: string) => {
+    try {
+        const result = await Products.findByIdAndDelete(id)
+        return result
+    } catch (err) {
+        throw new Error("Error")
+    }
+}

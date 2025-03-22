@@ -1,11 +1,12 @@
 import express from "express"
 import { getUsersController, loginUsersController, usersController } from "./users.controller"
+import { asyncHandler } from './../../middlewares/asyncHandler';
 
 const usersRouter = express.Router()
 
-usersRouter.post('/register', usersController)
+usersRouter.post('/register', asyncHandler(usersController))
 // http://localhost:5000/api/v1/register
-usersRouter.post('/login', loginUsersController)
+usersRouter.post('/login', asyncHandler(loginUsersController))
 // http://localhost:5000/api/v1/login
 usersRouter.get('/users', getUsersController)
 // http://localhost:5000/api/v1/users
