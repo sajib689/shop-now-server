@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import {
   getUsersService,
   loginUsersService,
+  updateRoleService,
   usersService,
 } from "./users.sevice";
 import bcrypt from "bcryptjs";
@@ -110,3 +111,19 @@ export const deleteUsersController = async (req: Request, res: Response) => {
     throw new Error("Error");
   }
 };
+
+// update the role of a user
+
+export const updateRoleController = async (req: Request, res: Response) => {
+  try {
+    const { email, role } = req.body;
+    const result = await updateRoleService(email, role);
+    res.status(200).json({
+      message: "Successfully updated user role",
+      status: "success",
+      data: result,
+    });
+  } catch (err) {
+    throw new Error("Error");
+  }
+}
