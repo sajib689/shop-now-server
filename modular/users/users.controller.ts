@@ -6,6 +6,7 @@ import {
 } from "./users.sevice";
 import bcrypt from "bcryptjs";
 import { Users } from "./users.model";
+import { deleteProductsService } from "../products/products.service";
 
 export const usersController = async (req: Request, res: Response) => {
   try {
