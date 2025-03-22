@@ -21,3 +21,14 @@ export const orderHistoryService = async () => {
         throw new Error("Error while fetching order history");
     }
 }
+
+// get order by email address
+
+export const getOrderByEmail = async (email: string) => {
+    try {
+        const order = await Order.findOne({email: email});
+        return order;
+    } catch (error) {
+        throw new Error("Error while fetching order history");
+    }
+}
