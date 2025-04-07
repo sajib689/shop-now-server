@@ -3,7 +3,7 @@ import { IUser } from "./users.interface";
 
 type usersModel = Model<IUser, object>
 export const usersSchema = new Schema({
-    id: {
+    _id: {
         type: String,
     },
     name: {
