@@ -15,7 +15,7 @@ export const usersController = async (req: Request, res: Response) => {
     const {email} = users;
     const isExiting = await Users.findOne({email})
     if(isExiting) {
-      return res.status(400).json({
+       res.status(400).json({
         message: "User already exists",
         status: "error",
       });
