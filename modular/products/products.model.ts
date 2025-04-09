@@ -13,6 +13,12 @@ export const productsSchema = new Schema({
     productPrice: {
         type: String,
     },
+    oldPrice: {
+        type: String,
+    },
+    discount:{
+        type: String,
+    },
     productDescription: {
         type: String,
     },
