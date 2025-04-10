@@ -20,6 +20,16 @@ export const getProductsService = async () => {
         throw new Error("Error")
     }
 }
+// get products details by id'
+
+export const getProductsByIdService = async (id: string) => {
+    try {
+        const result = await Products.findById(id)
+        return result
+    } catch (error){
+        throw new Error("Error")
+    }
+}
 
 // delete products
 

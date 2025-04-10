@@ -6,10 +6,12 @@ export const placeOrderService = async (order: Partial<IOrder>): Promise<IOrder 
     try {
         const newOrder = await Order.create(order);
         return newOrder;
-    } catch {
+    } catch (err) {
+        console.error("MongoDB Error:", err); // <-- this line
         throw new Error("Error while placing order");
     }
 };
+
 
 // get all orders history
 

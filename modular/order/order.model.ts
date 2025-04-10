@@ -11,7 +11,6 @@ export const orderSchema = new Schema({
     paymentType: { type: Boolean, required: true },
     price: { type: String, required: true },
     quantity: { type: String, required: true },
-    total: { type: String, required: true },
     trxId: { type: String, required: true },
     status: { type: Boolean, required: true },
     createAt: { type: Date, default: Date.now }
