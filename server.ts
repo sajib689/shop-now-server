@@ -21,7 +21,8 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 app.use(express.json());
 app.use(
   cors({
-    origin: "*", // You may replace "*" with specific URLs in production
+    origin: 'http://localhost:3000',
+    credentials: true,    // You may replace "*" with specific URLs in production
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
   })
 );

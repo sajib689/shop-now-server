@@ -12,7 +12,7 @@ export const orderSchema = new Schema({
     price: { type: String, required: true },
     quantity: { type: String, required: true },
     trxId: { type: String, required: true },
-    status: { type: Boolean, required: true },
+    status: { type: String, required: true },
     createAt: { type: Date, default: Date.now }
 })
 

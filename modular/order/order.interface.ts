@@ -10,7 +10,7 @@
   price: string;
   quantity: string;
   trxId: string;
-  status: boolean;
+  status: string;
   createAt: Date;
 }
 export default IOrder;
