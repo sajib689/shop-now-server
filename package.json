@@ -5,13 +5,14 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server.js",
-    "dev": "ts-node-dev --respawn server.ts"
+    "start": "node api.js && server.js",
+    "dev": "node api.js && ts-node-dev --respawn server.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "bkash-payment-gateway": "^2.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
