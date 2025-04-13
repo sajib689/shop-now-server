@@ -6,10 +6,12 @@ export const placeOrderService = async (order: Partial<IOrder>): Promise<IOrder 
     try {
         const newOrder = await Order.create(order);
         return newOrder;
-    } catch {
+    } catch (err) {
+        console.error("MongoDB Error:", err); // <-- this line
         throw new Error("Error while placing order");
     }
 };
+
 
 // get all orders history
 
@@ -26,9 +28,33 @@ export const orderHistoryService = async () => {
 
 export const getOrderByEmail = async (email: string) => {
     try {
-        const order = await Order.findOne({email: email});
+        
+        const order = await Order.find({email});
         return order;
     } catch (error) {
         throw new Error("Error while fetching order history");
     }
 }
+
+// patch for products cancle 
+
+export const orderCancleService = async (id: string) => {
+    try {
+      // Attempt to find and update the order's status
+      const order = await Order.findByIdAndUpdate(
+        id,
+        { status: 'cancelled' },
+        { new: true }
+      );
+      // If the order is not found, return null
+      if (!order) {
+        return null;
+      }
+  
+      return order;
+    } catch (error) {
+      // Log error and throw for further handling
+      console.error('Error while updating the order status:', error);
+      throw new Error('Error while cancelling order');
+    }
+  };
